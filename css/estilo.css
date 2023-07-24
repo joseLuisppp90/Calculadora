@@ -1,0 +1,31 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculadora {
+    display: grid;
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: 160px repeat(5, 75px);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.display {
+    grid-column: 1 / -1;
+    padding: 50px;
+    margin: 10px 10px 30px;
+    flex-direction: column;
+    background-color: #b7cbc6;
+    border-radius:1px;
+    text-align: right;
+    justify-content: space-between;
+    word-break: break-all;
+    }
+
+
+  
+    
