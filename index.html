@@ -1,40 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculadora</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces&display=swap" rel="stylesheet">
-    <link href="./css/estilo.css" rel="stylesheet" />
-    <script src="./js/Calculadora.js" type="text/javascript"></script>
-    <script src="./js/index.js" type="text/javascript" defer></script>
-    <script src="./js/Display.js" type="text/javascript" ></script>
-</head>
-<body>
-      <div class="container">
-        <div class="calculadora">
-            <div class="display">
-                <div id="valor-anterior"></div>
-                <div id="valor-actual"></div>
-            </div>
-            <button class="numero">7</button>
-            <button class="numero">8</button>
-            <button class="numero">9</button>
-            <button class="operador" value="sumar">+</button>
-            <button class="numero">4</button>
-            <button class="numero">5</button>
-            <button class="numero">6</button>
-            <button class="operador" value="restar">-</button>
-            <button class="numero">1</button>
-            <button class="numero">2</button>
-            <button class="numero">3</button>
-            <button class="operador" value="multiplicar">X</button>
-            <button class="col-2 numero">0</button>
-            <button class="col-2" onclick="display.borrarTodo()">C</button>
-            <button class="operador" value="igual">=</button>
-            <button class="operador" value="dividir">/</button>
-           
-        </div>
-    </div>
-</body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/Styles.css">
+  </head>
+  <body> 
+
+<div class="txtResultado">
+  <form name="calcular">
+    
+  <label for="exampleFormControlTextarea1" class="form-label"><h2>Calculadora</h2></label>
+
+  <input type="text" name ="ans" value="" autocomplete="off" 
+    class="form-control" id="txtResultado" rows="3">
+
+<!-- Calculadora -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><button input type="reset  " value="C"  onclick="document.calcular.ans.value+='C'" class="btn " id="btndivide" >C</button></th>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="operar(`/`)">/</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="operar(`%`)">%</button></td>
+
+      <!--  queremos eliminar un solo numero -->
+      <th scope="col"><button input type="button" onclick="document.calcular.ans.value+='BORRA'" class="btn " id="btndivide" >Borrar</button></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><!-- tenemos los botones en donde separamos los numeros y los operadores y cada uno tiene su funcion  -->
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`7`)">7</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`8`)">8</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`9`)">9</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`-`)">-</button></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`4`)">4</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`5`)">5</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`6`)">6</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="operar(`*`)">x</button></td>
+     </tr>
+    <tr><!-- numero y operar son los nombres de nuestras funciones  -->
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`1`)">1</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`2`)">2</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`3`)">3</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="operar(`+`)">+</button></td>
+      </tr>
+    <tr>
+      <th scope="row"><button type="button"class="btn " id="btnparentesis">( )</button></th>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`0`)">0</button></td>
+      <td><button type="button" class="btn btn-light btn-lg" onclick="numero(`.`)">.</button></td>
+
+      <!-- este es el que hace la magia al dar el resultado  por que esta conectado con mi form calcular  -->
+
+  
+      <th scope="col"><button input type="button" value="="  onclick="document.calcular.ans.value= eval(document.calcular.ans.value)" class="btn " id="btnigual">=</button></th> 
+    </tr>
+  </tbody>
+</table>
+</form>
+</div> 
+<script defer src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
 </html>
+
+
